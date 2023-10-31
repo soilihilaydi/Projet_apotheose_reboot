@@ -1,14 +1,14 @@
 .login {
   height: 100vh;
-  background-color: rgb(3, 2, 32);
+  background-color: rgb(3, 2, 32);;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card {
-  width: 100%; /* Ajustez la largeur à 100% pour une mise en page responsive */
-  max-width: 800px; /* Ajoutez une largeur maximale pour éviter qu'elle ne devienne trop large */
+  width: 100%;
+  max-width: 800px;
   display: flex;
   background-color: white;
   border-radius: 10px;
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.login.left {
+.login .left {
   flex: 1;
   background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
     url("https://cdn.www.elektron.se/media/wysiwyg/Syntakt-hero1.jpg")
@@ -29,14 +29,12 @@
   color: white;
 
   h1 {
-    font-size: 36px; /* Ajustez la taille de la police pour les écrans plus petits */
-    line-height: 36px; /* Ajustez la hauteur de ligne pour les écrans plus petits */
+    font-size: 36px;
+    line-height: 36px;
   }
 
-  /* Supprimez le span vide */
-
   button {
-    width: 100%; /* Ajustez la largeur à 100% pour remplir l'espace */
+    width: 100%;
     padding: 10px;
     border: none;
     background-color: white;
@@ -46,12 +44,12 @@
   }
 }
 
-.right {
+.login .right {
   flex: 1;
-  padding: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+  gap: 20px;
   justify-content: center;
 
   h1 {
@@ -61,16 +59,16 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+    gap: 20px;
 
     input {
       border: none;
       border-bottom: 1px solid lightgray;
-      padding: 10px; /* Ajustez le rembourrage pour les écrans plus petits */
+      padding: 10px;
     }
 
     button {
-      width: 100%; /* Ajustez la largeur à 100% pour remplir l'espace */
+      width: 100%;
       padding: 10px;
       border: none;
       background-color: #938eef;
@@ -82,16 +80,15 @@
 }
 
 @media (max-width: 768px) {
-  /* Appliquez ces styles pour les écrans d'une largeur maximale de 768 pixels */
   .card {
-    flex-direction: column; /* Changez la direction pour empiler les éléments */
+    flex-direction: column;
   }
 
-  .left {
-    padding: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+  .login .left {
+    padding: 20px;
   }
 
-  .right {
-    padding: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+  .login .right {
+    padding: 20px;
   }
 }
