@@ -28,7 +28,8 @@ export const addPost = (req, res) => {
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Le jeton n'est pas valide!");
 
-    const q = `INSERT INTO posts("desc", "img", "createdAt", "userId") VALUES (?)`;
+    const q = "INSERT INTO posts(`desc`, `img`, `createdAt`, `userId`) VALUES (?)";
+
     const values = [
       req.body.desc,
       req.body.img,

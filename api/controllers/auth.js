@@ -27,13 +27,13 @@ export const register = (req,res)=>{
 
     const values = [
       req.body.username,
-      req.body.email,
-      hashedPassword,
+      req.body.email,hashedPassword,
       req.body.name,
     ];
+
     db.query(q, [values], (err, data) => {
       if (err) return res.status(500).json(err);
-      return res.status(200).json("L'utilisateur a été créé.");
+      return res.status(200).json("L'utilisateur a été crée.");
     });
   });
 };
