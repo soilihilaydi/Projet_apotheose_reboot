@@ -9,7 +9,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
 
 const Share = () => {
-  const [file, setFile] = useState(null);
+  const [ setFile] = useState(null);
   const [desc, setDesc] = useState("");
 
   const { currentUser } = useContext(AuthContext);
@@ -79,5 +79,6 @@ const Share = () => {
     </div>
   );
 };
+
 
 export default Share;
