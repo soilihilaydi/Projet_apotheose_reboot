@@ -6,7 +6,7 @@ export const getPosts = (req, res) => {
   const token = req.cookies.accessToken;
   if (!token) return res.status(401).json("Non connecté!");
 
-  jwt.verify(token, "controller", (err, userInfo) => {
+  jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Le jeton n'est pas valide!");
 
     const q = `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId)
@@ -28,7 +28,7 @@ export const addPost = (req, res) => {
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Le jeton n'est pas valide!");
 
-    const q =  "INSERT INTO posts (`desc`, `img`, `createdAt`, `userId`) VALUES (?)";
+    const q = `INSERT INTO posts("desc", "img", "createdAt", "userId") VALUES (?)`;
     const values = [
       req.body.desc,
       req.body.img,
@@ -42,4 +42,3 @@ export const addPost = (req, res) => {
     });
   });
 };
-
