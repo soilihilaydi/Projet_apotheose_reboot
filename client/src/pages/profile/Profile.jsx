@@ -14,11 +14,13 @@ import { makeRequest } from "../../axios";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
+import Update from "../../components/update/Update";
+import { useState } from "react";
 
 
 
 const Profile = () => {
-  
+  const [openUpdate, setOpenUpdate] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   const userId = parseInt(useLocation().pathname.split("/")[2]);
@@ -106,7 +108,7 @@ const Profile = () => {
                 {rIsLoading ? (
                   "loading"
                 ) : userId === currentUser.id ? (
-                  <button >Mise à jour</button>
+                  <button onClick={() => setOpenUpdate(true)}>Mise à jour</button>
                 ) : (
                   <button onClick={handleFollow}>
                     {relationshipData.includes(currentUser.id)
@@ -124,7 +126,7 @@ const Profile = () => {
           </div>
         </>
       )}
-      
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
     </div>
   );
 };
