@@ -106,7 +106,7 @@ const Profile = () => {
                 {rIsLoading ? (
                   "loading"
                 ) : userId === currentUser.id ? (
-                  <button >update</button>
+                  <button >Mise à jour</button>
                 ) : (
                   <button onClick={handleFollow}>
                     {relationshipData.includes(currentUser.id)
@@ -120,7 +120,7 @@ const Profile = () => {
                 <MoreVertIcon />
               </div>
             </div>
-            <Posts  />
+            <Posts userId={userId} />
           </div>
         </>
       )}
